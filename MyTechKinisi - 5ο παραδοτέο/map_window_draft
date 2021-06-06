@@ -25,3 +25,30 @@ class window():
 
     def app_button(self,text,x_stat,y_stat):
         self.button=tk.Button(self.window, text=text)
+self.button.pack()
+        self.button.place(relx=x_stat,rely=y_stat)
+        return self
+
+
+
+    def add_input(self,x,y,w,h):
+        self.entry=tk.Entry(self.window,cursor="xterm",font=("calibri",10),justify="center")
+        self.entry.pack()
+        self.entry.place(relx=x,y=y,width=w,height=h)
+
+
+
+
+
+    def run(self):
+        run=self.window.mainloop()
+        return run
+
+
+
+
+map=window()
+map_image=map.photo('~/PycharmProjects/App/map.png',390,400,0.01,0.05)
+button_reset = map.app_button("Change Route",0.35,0.9)
+
+map.run()
